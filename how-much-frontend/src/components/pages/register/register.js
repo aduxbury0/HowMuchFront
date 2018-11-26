@@ -10,13 +10,13 @@ class Register extends Component {
         <div>
         <Navbar />
         <Grid container={true}>
-          <Grid item md={4} xs={"auto"}></Grid>
-          <Grid item md={4} xs={12}>
+          <Grid item md={4} sm={1} xs={"auto"}></Grid>
+          <Grid item md={4} sm={10} xs={12}>
             <Paper style={styles.loginPaper}>
               <RegistrationForm />
             </Paper>
           </Grid>
-          <Grid item md={4} xs={"auto"}></Grid>
+          <Grid item md={4} sm={1} xs={"auto"}></Grid>
           </Grid>
       </div>
     );

@@ -31,7 +31,7 @@ class RegistrationForm extends Component {
     };
 
     handleRegister(event) {
-        if(this.state.password === this.state.passwordConfirm) {
+        if(this.state.password !== '' && this.state.username !== '' && this.state.password === this.state.passwordConfirm) {
             axios({
                 method: 'post',
                 url: 'http://localhost:5000/api/v1/user/register',
@@ -85,6 +85,7 @@ class RegistrationForm extends Component {
     render() {
         return (
             <div>
+                
                 <Grid container={true} justify="center" direction="column" style={styles.grid}>
                         <Typography variant="display1" align="center" gutterBottom >
                             Register

@@ -8,14 +8,26 @@ class ViewOne extends Component {
         super(props);
         this.state = {
         }
+        this.handleLogout = this.handleLogout.bind(this);
     }
 
+    handleLogout() {
+        if('Authorization' in sessionStorage) {
+            sessionStorage.removeItem('Authorization');
+            this.forceUpdate();
+        }
+        else {
+            alert('You are not logged in, don\'t try to log out');
+        }
+
+    }
 
   render() {
         if('Authorization' in sessionStorage) {
             return (
             <div>
-                <Button style={styles.button}><Link style={styles.links} to='/login'>Log Out</Link></Button>
+                <Button style={styles.askQuestion}><Link to='/post' style={styles.links}>Ask Question</Link></Button>
+                <Button style={styles.button} onClick={(event) => this.handleLogout(event)}><Link style={styles.links} to='/'>Log Out</Link></Button>
             </div> )
         }
         else {
@@ -44,6 +56,14 @@ const styles = {
         fontFamily: "Roboto",
         fontSize: "16px",
         textDecoration: "none"
+    },
+    askQuestion: {
+        width: "30%",
+        minWidth: "100px",
+        left: "35%",
+        marginLeft: "10px",
+        marginRight: "10px",
+        backgroundColor: '#01B2A6'
     }
 }
 
