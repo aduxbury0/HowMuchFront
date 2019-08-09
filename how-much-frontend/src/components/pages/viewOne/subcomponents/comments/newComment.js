@@ -37,7 +37,7 @@ class NewComment extends Component {
             "Authorization": "Bearer " + sessionStorage.getItem('Authorization')
         },
         params: {
-          id: this.state.id
+          postId: this.state.id
         },
         data: {
           "content": this.state.commentBody,
